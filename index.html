@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arabic Alphabit List</title>
+</head>
+<style>
+  body {
+    direction: rtl;
+  }
+  .arAlpahList {
+    list-style-type: none;
+}
+.arAlpahList > li:before {
+    content: attr(data-before);
+    font-family: 'midan-bold';
+}
+</style>
+
+<body>
+  <ol class="arAlpahList">
+    <li>مثال رقم 1</li>
+    <li>مثال رقم 2</li>
+    <li>مثال رقم 3</li>
+    <li>مثال رقم 4</li>
+    <li>مثال رقم 5</li>
+    <li>مثال رقم 6</li>
+    <li>مثال رقم 7</li>
+    <li>مثال رقم 8</li>
+    <li>مثال رقم 9</li>
+    <li>مثال رقم 10</li>
+    <li>مثال رقم 11</li>
+    <li>مثال رقم 12</li>
+  </ol>
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$( document ).ready(function() {
+
+ const arArry = ["أ","ب","ت","ث","ج","ح","د","ذ","ر","ز","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ك","ل","م","ن","ه","و","ي"];
+
+ $(".arAlpahList").each(function () {
+ 
+	$(this).find(" > li").each(function (i) {
+
+	$(this  ).attr('data-before', "" + arArry[i]  +"-  "  );
+	// console.log(arArry[i], 'test');
+   })
+})
+});
+</script>
+
+</body>
+</html>
